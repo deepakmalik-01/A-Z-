@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book an Appointment - Automechanica</title>
+    <link rel="stylesheet" href="book.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="automechanica">
+      <!-- Header -->
+      <header class="header">
+        <div class="container">
+          <div class="header-inner">
+            <div class="logo-wrapper">
+              <a href="index.html" class="logo">
+                <div class="logo-text">
+                  <span class="logo-primary">AUTO</span>MECHANICA
+                </div>
+              </a>
+            </div>
+
+            <nav class="desktop-nav">
+              <a href="index.html" class="nav-link">Home</a>
+              <a href="#" class="nav-link">About</a>
+              <a href="#" class="nav-link">Services</a>
+              <a href="#" class="nav-link">FAQs</a>
+              <a href="#" class="nav-link">Select</a>
+              <a href="#" class="nav-link">Contact</a>
+              <a href="book.html" class="appointment-btn active"
+                >BOOK AN APPOINTMENT</a
+              >
+            </nav>
+
+            <div class="mobile-menu-toggle" id="mobileMenuToggle">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="mobile-menu" id="mobileMenu">
+          <nav class="mobile-nav">
+            <a href="index.html" class="mobile-nav-link">Home</a>
+            <a href="#" class="mobile-nav-link">About</a>
+            <a href="#" class="mobile-nav-link">Services</a>
+            <a href="#" class="mobile-nav-link">FAQs</a>
+            <a href="#" class="mobile-nav-link">Select</a>
+            <a href="#" class="mobile-nav-link">Contact</a>
+            <a href="book.html" class="appointment-btn mobile active"
+              >BOOK AN APPOINTMENT</a
+            >
+          </nav>
+        </div>
+      </header>
+
+      <!-- Page Title Section -->
+      <section class="page-title-section">
+        <div class="container">
+          <h1>Book an Appointment</h1>
+          <div class="breadcrumbs">
+            <a href="index.html">Home</a> <i class="fas fa-chevron-right"></i>
+            <span>Book an Appointment</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Booking Section -->
+      <section class="booking-section">
+        <div class="container">
+          <div class="booking-grid">
+            <div class="booking-info">
+              <h2>Schedule Your Auto Service</h2>
+              <p>
+                Please fill in the form to schedule your vehicle service
+                appointment. Our team will confirm your booking within 2-4
+                business hours.
+              </p>
+
+              <div class="info-block">
+                <div class="icon-wrapper">
+                  <i class="fas fa-clock"></i>
+                </div>
+                <div class="info-content">
+                  <h3>Working Hours</h3>
+                  <p>
+                    Monday - Friday: 8:00 AM - 6:00 PM <br />
+                    Saturday: 9:00 AM - 3:00 PM <br />
+                    Sunday: Closed
+                  </p>
+                </div>
+              </div>
+
+              <div class="info-block">
+                <div class="icon-wrapper">
+                  <i class="fas fa-phone-alt"></i>
+                </div>
+                <div class="info-content">
+                  <h3>Emergency Repairs</h3>
+                  <p>
+                    Call us directly at
+                    <a href="tel:+11234567890">(123) 456-7890</a> for urgent
+                    repairs or roadside assistance.
+                  </p>
+                </div>
+              </div>
+
+              <div class="info-block">
+                <div class="icon-wrapper">
+                  <i class="fas fa-tools"></i>
+                </div>
+                <div class="info-content">
+                  <h3>Services Available</h3>
+                  <p>
+                    Engine Repair, Oil Change, Brake Service, Transmission
+                    Service, Electrical Diagnostics, and more.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="booking-form-container">
+              <form class="booking-form" id="appointmentForm">
+                <div class="form-header">
+                  <h3>Appointment Details</h3>
+                  <p>Fields marked with * are required</p>
+                </div>
+
+                <div class="form-group">
+                  <label for="fullName">Full Name *</label>
+                  <input type="text" id="fullName" name="fullName" required />
+                  <div class="error-message" id="fullNameError"></div>
+                </div>
+
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="email">Email Address *</label>
+                    <input type="email" id="email" name="email" required />
+                    <div class="error-message" id="emailError"></div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="phone">Phone Number *</label>
+                    <input type="tel" id="phone" name="phone" required />
+                    <div class="error-message" id="phoneError"></div>
+                  </div>
+                </div>
+
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="carMake">Car Make *</label>
+                    <input type="text" id="carMake" name="carMake" required />
+                    <div class="error-message" id="carMakeError"></div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="carModel">Car Model *</label>
+                    <input type="text" id="carModel" name="carModel" required />
+                    <div class="error-message" id="carModelError"></div>
+                  </div>
+                </div>
+
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="carYear">Car Year *</label>
+                    <input
+                      type="number"
+                      id="carYear"
+                      name="carYear"
+                      min="1950"
+                      max="2025"
+                      required
+                    />
+                    <div class="error-message" id="carYearError"></div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="serviceType">Service Type *</label>
+                    <select id="serviceType" name="serviceType" required>
+                      <option value="">Select a service...</option>
+                      <option value="oil-change">Oil Change</option>
+                      <option value="brake-service">Brake Service</option>
+                      <option value="engine-repair">Engine Repair</option>
+                      <option value="transmission">Transmission Service</option>
+                      <option value="electrical">Electrical Diagnostics</option>
+                      <option value="wheel-alignment">Wheel Alignment</option>
+                      <option value="inspection">Vehicle Inspection</option>
+                      <option value="other">Other</option>
+                    </select>
+                    <div class="error-message" id="serviceTypeError"></div>
+                  </div>
+                </div>
+
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="appointmentDate">Preferred Date *</label>
+                    <input
+                      type="date"
+                      id="appointmentDate"
+                      name="appointmentDate"
+                      required
+                    />
+                    <div class="error-message" id="appointmentDateError"></div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="appointmentTime">Preferred Time *</label>
+                    <select
+                      id="appointmentTime"
+                      name="appointmentTime"
+                      required
+                    >
+                      <option value="">Select a time...</option>
+                      <option value="morning">Morning (8:00 - 11:00)</option>
+                      <option value="midday">Midday (11:00 - 2:00)</option>
+                      <option value="afternoon">Afternoon (2:00 - 6:00)</option>
+                    </select>
+                    <div class="error-message" id="appointmentTimeError"></div>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="additionalInfo">Additional Information</label>
+                  <textarea
+                    id="additionalInfo"
+                    name="additionalInfo"
+                    rows="4"
+                    placeholder="Please provide any details about the service you need..."
+                  ></textarea>
+                </div>
+
+                <div class="form-group checkbox-group">
+                  <label class="checkbox-container">
+                    <input
+                      type="checkbox"
+                      id="agreement"
+                      name="agreement"
+                      required
+                    />
+                    <span class="checkmark"></span>
+                    I agree to the <a href="#">terms and conditions</a> *
+                  </label>
+                  <div class="error-message" id="agreementError"></div>
+                </div>
+
+                <button type="submit" class="submit-btn">
+                  SCHEDULE APPOINTMENT
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ Section -->
+      <section class="faq-section">
+        <div class="container">
+          <div class="section-header">
+            <h2>Frequently Asked Questions</h2>
+            <p>
+              Find answers to common questions about our appointment booking
+              process and services.
+            </p>
+          </div>
+
+          <div class="faq-grid">
+            <div class="faq-item">
+              <div class="faq-question" data-toggle="faq1">
+                <h3>How do I schedule an appointment?</h3>
+                <span class="toggle-icon"><i class="fas fa-plus"></i></span>
+              </div>
+              <div class="faq-answer" id="faq1">
+                <p>
+                  You can schedule an appointment by filling out the form on
+                  this page, calling us directly at (123) 456-7890, or visiting
+                  our shop during business hours.
+                </p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <div class="faq-question" data-toggle="faq2">
+                <h3>How long will my service take?</h3>
+                <span class="toggle-icon"><i class="fas fa-plus"></i></span>
+              </div>
+              <div class="faq-answer" id="faq2">
+                <p>
+                  Service duration depends on the type of service. Oil changes
+                  typically take 30-60 minutes, while more complex repairs may
+                  take several hours or days. We'll provide you with an
+                  estimated completion time when you book your appointment.
+                </p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <div class="faq-question" data-toggle="faq3">
+                <h3>Do you offer courtesy vehicles?</h3>
+                <span class="toggle-icon"><i class="fas fa-plus"></i></span>
+              </div>
+              <div class="faq-answer" id="faq3">
+                <p>
+                  Yes, we offer a limited number of courtesy vehicles for
+                  customers with appointments. Please request a courtesy vehicle
+                  when scheduling your appointment to ensure availability.
+                </p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <div class="faq-question" data-toggle="faq4">
+                <h3>What payment methods do you accept?</h3>
+                <span class="toggle-icon"><i class="fas fa-plus"></i></span>
+              </div>
+              <div class="faq-answer" id="faq4">
+                <p>
+                  We accept cash, Visa, MasterCard, American Express, and
+                  Discover. We also offer financing options for larger repairs.
+                </p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <div class="faq-question" data-toggle="faq5">
+                <h3>Is there a cancellation fee?</h3>
+                <span class="toggle-icon"><i class="fas fa-plus"></i></span>
+              </div>
+              <div class="faq-answer" id="faq5">
+                <p>
+                  There is no cancellation fee, but we appreciate at least 24
+                  hours' notice if you need to cancel or reschedule your
+                  appointment.
+                </p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <div class="faq-question" data-toggle="faq6">
+                <h3>Do you offer emergency repairs?</h3>
+                <span class="toggle-icon"><i class="fas fa-plus"></i></span>
+              </div>
+              <div class="faq-answer" id="faq6">
+                <p>
+                  Yes, we offer emergency repair services. Please call us
+                  directly at (123) 456-7890 for immediate assistance with
+                  urgent repairs.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <div class="container">
+          <div class="footer-grid">
+            <div class="footer-about">
+              <h3>Automechanica</h3>
+              <p>
+                Professional auto repair and maintenance services with a
+                commitment to quality and customer satisfaction.
+              </p>
+              <div class="social-links">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+              </div>
+            </div>
+
+            <div class="footer-links">
+              <h3>Quick Links</h3>
+              <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">FAQs</a></li>
+                <li><a href="#">Contact</a></li>
+              </ul>
+            </div>
+
+            <div class="footer-services">
+              <h3>Services</h3>
+              <ul>
+                <li><a href="#">Engine Repair</a></li>
+                <li><a href="#">Brake Service</a></li>
+                <li><a href="#">Transmission Service</a></li>
+                <li><a href="#">Oil Change</a></li>
+                <li><a href="#">Electrical Diagnostics</a></li>
+              </ul>
+            </div>
+
+            <div class="footer-contact">
+              <h3>Contact Info</h3>
+              <ul>
+                <li>
+                  <i class="fas fa-map-marker-alt"></i>
+                  <span>123 Repair Street, Automotive City, AC 12345</span>
+                </li>
+                <li>
+                  <i class="fas fa-phone-alt"></i>
+                  <span>(123) 456-7890</span>
+                </li>
+                <li>
+                  <i class="fas fa-envelope"></i>
+                  <span>info@automechanica.com</span>
+                </li>
+                <li>
+                  <i class="fas fa-clock"></i>
+                  <span>Mon-Fri: 8AM-6PM, Sat: 9AM-3PM</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="footer-bottom">
+            <p>© 2023 Automechanica. All rights reserved.</p>
+            <div class="footer-bottom-links">
+              <a href="#">Privacy Policy</a>
+              <a href="#">Terms of Service</a>
+              <a href="#">Cookie Policy</a>
+            </div>
+          </div>
+        </div>
+      </footer>
+
+      <!-- Confirmation Modal -->
+      <div class="modal" id="confirmationModal">
+        <div class="modal-content">
+          <span class="close-modal">&times;</span>
+          <div class="modal-icon">
+            <i class="fas fa-check-circle"></i>
+          </div>
+          <h2>Appointment Scheduled!</h2>
+          <p>
+            Thank you for booking with Automechanica. We have received your
+            appointment request and will confirm your booking shortly.
+          </p>
+          <p>
+            A confirmation email has been sent to
+            <span id="confirmationEmail"></span>.
+          </p>
+          <button class="modal-button">RETURN TO HOME</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="book.js"></script>
+  </body>
+</html>
