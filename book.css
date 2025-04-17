@@ -1,0 +1,477 @@
+/* Import Base Styles */
+@import url("index.css");
+
+/* Additional Styles for Booking Page */
+
+/* Page Title Section */
+.page-title-section {
+  background-color: #1a1a1a;
+  padding: 8rem 0 3rem;
+  text-align: center;
+  color: white;
+}
+
+.page-title-section h1 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+
+.breadcrumbs {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  color: #ccc;
+}
+
+.breadcrumbs a {
+  color: #e61e1e;
+  transition: color 0.3s ease;
+}
+
+.breadcrumbs a:hover {
+  color: white;
+}
+
+.breadcrumbs i {
+  font-size: 0.75rem;
+}
+
+/* Booking Section */
+.booking-section {
+  padding: 4rem 0;
+  background-color: #f5f5f5;
+}
+
+.booking-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 2rem;
+}
+
+/* Booking Info */
+.booking-info {
+  padding: 2rem;
+  background-color: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.booking-info h2 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 1rem;
+}
+
+.booking-info > p {
+  color: #666;
+  margin-bottom: 2rem;
+}
+
+.info-block {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.icon-wrapper {
+  flex-shrink: 0;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #e61e1e;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+}
+
+.info-content h3 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 0.5rem;
+}
+
+.info-content p {
+  color: #666;
+  line-height: 1.6;
+}
+
+.info-content a {
+  color: #e61e1e;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.info-content a:hover {
+  text-decoration: underline;
+}
+
+/* Booking Form */
+.booking-form-container {
+  padding: 2rem;
+  background-color: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.form-header {
+  margin-bottom: 1.5rem;
+}
+
+.form-header h3 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 0.5rem;
+}
+
+.form-header p {
+  color: #666;
+  font-size: 0.875rem;
+}
+
+.form-group {
+  margin-bottom: 1.25rem;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  color: #1a1a1a;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="number"],
+input[type="date"],
+select,
+textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 0.25rem;
+  font-family: "Open Sans", sans-serif;
+  font-size: 1rem;
+  color: #333;
+  transition: border-color 0.3s ease;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: #e61e1e;
+}
+
+.error-message {
+  color: #e61e1e;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+  min-height: 1.25rem;
+}
+
+/* Checkbox styling */
+.checkbox-group {
+  margin-top: 1rem;
+}
+
+.checkbox-container {
+  display: block;
+  position: relative;
+  padding-left: 2rem;
+  cursor: pointer;
+  user-select: none;
+}
+
+.checkbox-container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.checkbox-container:hover input ~ .checkmark {
+  border-color: #ccc;
+}
+
+.checkbox-container input:checked ~ .checkmark {
+  background-color: #e61e1e;
+  border-color: #e61e1e;
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.checkbox-container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.checkbox-container .checkmark:after {
+  left: 7px;
+  top: 3px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.checkbox-container a {
+  color: #e61e1e;
+  text-decoration: underline;
+}
+
+/* Submit Button */
+.submit-btn {
+  display: block;
+  width: 100%;
+  padding: 1rem;
+  border: none;
+  border-radius: 0.25rem;
+  background-color: #e61e1e;
+  color: white;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 1.5rem;
+}
+
+.submit-btn:hover {
+  background-color: rgba(230, 30, 30, 0.9);
+}
+
+/* FAQ Section */
+.faq-section {
+  padding: 4rem 0;
+  background-color: white;
+}
+
+.faq-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+
+.faq-item {
+  border: 1px solid #ddd;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.faq-question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.25rem;
+  background-color: #f9f9f9;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.faq-question:hover {
+  background-color: #f5f5f5;
+}
+
+.faq-question h3 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin: 0;
+}
+
+.toggle-icon {
+  color: #e61e1e;
+  transition: transform 0.3s ease;
+}
+
+.toggle-icon.active {
+  transform: rotate(45deg);
+}
+
+.faq-answer {
+  padding: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.faq-answer.show {
+  padding: 1.25rem;
+  max-height: 200px;
+}
+
+.faq-answer p {
+  color: #666;
+  margin: 0;
+}
+
+/* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 1000;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.modal.show {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 1;
+}
+
+.modal-content {
+  background-color: white;
+  max-width: 500px;
+  width: 90%;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  position: relative;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.close-modal {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #666;
+  transition: color 0.3s ease;
+}
+
+.close-modal:hover {
+  color: #e61e1e;
+}
+
+.modal-icon {
+  color: #e61e1e;
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+}
+
+.modal-content h2 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 1rem;
+}
+
+.modal-content p {
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+#confirmationEmail {
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+.modal-button {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background-color: #e61e1e;
+  color: white;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 1rem;
+}
+
+.modal-button:hover {
+  background-color: rgba(230, 30, 30, 0.9);
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+  .booking-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .faq-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .page-title-section {
+    padding: 7rem 0 2rem;
+  }
+
+  .page-title-section h1 {
+    font-size: 2rem;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .booking-info,
+  .booking-form-container {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .page-title-section h1 {
+    font-size: 1.75rem;
+  }
+
+  .booking-info h2 {
+    font-size: 1.5rem;
+  }
+
+  .faq-question h3 {
+    font-size: 1rem;
+  }
+}
