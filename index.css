@@ -60,10 +60,7 @@ a {
 }
 
 .logo-primary {
-  background-image: url("logo.png");
-  height: 10%;
-  width: 10%;
-  background-size: contain;
+  color: #e61e1e;
 }
 
 /* Desktop Navigation */
