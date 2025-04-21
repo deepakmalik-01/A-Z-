@@ -1,4 +1,4 @@
-// JavaScript for Automechanica Website
+// JavaScript for A TO Z Car service Website
 
 // Mobile Menu Toggle
 document.addEventListener("DOMContentLoaded", function () {

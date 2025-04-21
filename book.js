@@ -1,4 +1,4 @@
-// JavaScript for Automechanica Booking Page
+// JavaScript for A TO Z Car Service Booking Page
 
 document.addEventListener("DOMContentLoaded", function () {
   // Mobile Menu Toggle
