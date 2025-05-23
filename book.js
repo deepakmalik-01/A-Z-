@@ -1,4 +1,20 @@
 // JavaScript for A TO Z Car Service Booking Page
+// Your Firebase configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyCI1k9hd8IBm4SYnj9NduVJkAMAOem-hgc",
+  authDomain: "atoz-76648.firebaseapp.com",
+  projectId: "atoz-76648",
+  storageBucket: "atoz-76648.firebasestorage.app",
+  messagingSenderId: "549636098254",
+  appId: "1:549636098254:web:5ef6f4b96e66b1b100689f",
+  measurementId: "G-FJ21QQLZCY"
+};
+
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+
+    // Get a reference to the Firestore database
+    const db = firebase.firestore();
 
 document.addEventListener("DOMContentLoaded", function () {
   // Mobile Menu Toggle
@@ -73,21 +89,50 @@ document.addEventListener("DOMContentLoaded", function () {
   const appointmentForm = document.getElementById("appointmentForm");
 
   if (appointmentForm) {
-    appointmentForm.addEventListener("submit", function (e) {
-      e.preventDefault();
+        appointmentForm.addEventListener("submit", function (e) {
+          e.preventDefault();
 
-      if (validateForm()) {
-        // Show confirmation modal
-        showConfirmationModal();
-        // Reset form
-        appointmentForm.reset();
-        // Set default date again
-        const tomorrow = new Date();
-        tomorrow.setDate(new Date().getDate() + 1);
-        appointmentDateInput.value = formatDate(tomorrow);
+          if (validateForm()) {
+            // Get form data
+            const formData = {
+              fullName: document.getElementById("fullName").value,
+              email: document.getElementById("email").value,
+              phone: document.getElementById("phone").value,
+              carMake: document.getElementById("carMake").value,
+              carModel: document.getElementById("carModel").value,
+              carYear: document.getElementById("carYear").value,
+              serviceType: document.getElementById("serviceType").value,
+              appointmentDate: document.getElementById("appointmentDate").value,
+              appointmentTime: document.getElementById("appointmentTime").value,
+              additionalInfo: document.getElementById("additionalInfo").value,
+              timestamp: firebase.firestore.FieldValue.serverTimestamp() // Add a timestamp
+            };
+
+            // Add data to Firestore
+            db.collection("appointments").add(formData)
+              .then((docRef) => {
+                console.log("Document written with ID: ", docRef.id);
+                // Show confirmation modal
+                showConfirmationModal();
+                // Reset form
+                appointmentForm.reset();
+                 // Set default date again
+                const tomorrow = new Date();
+                tomorrow.setDate(new Date().getDate() + 1);
+                 const appointmentDateInput = document.getElementById("appointmentDate");
+                 if (appointmentDateInput) {
+                   appointmentDateInput.value = formatDate(tomorrow);
+                }
+
+              })
+              .catch((error) => {
+                console.error("Error adding document: ", error);
+                alert("There was an error scheduling your appointment. Please try again."); // Show an error message
+              });
+          }
+        });
       }
-    });
-  }
+
 
   function validateForm() {
     let isValid = true;
