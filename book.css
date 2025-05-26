@@ -17,7 +17,73 @@
   font-weight: 700;
   margin-bottom: 0.75rem;
 }
+/* Add this to your book.css file */
+.success-popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 2000;
+  justify-content: center;
+  align-items: center;
+}
 
+.success-popup-content {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 8px;
+  max-width: 400px;
+  width: 90%;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.success-close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 24px;
+  cursor: pointer;
+  color: #666;
+}
+
+.success-icon {
+  font-size: 60px;
+  color: #e61e1e;
+  margin-bottom: 20px;
+}
+
+.success-popup-content h3 {
+  font-size: 24px;
+  margin-bottom: 15px;
+  color: #222;
+}
+
+.success-popup-content p {
+  font-size: 16px;
+  margin-bottom: 25px;
+  color: #666;
+}
+
+.success-btn {
+  background-color: #e61e1e;
+  color: #fff;
+  border: none;
+  padding: 10px 30px;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.success-btn:hover {
+  background-color: #c01818;
+}
 .breadcrumbs {
   display: flex;
   justify-content: center;
@@ -143,12 +209,34 @@
   margin-bottom: 1.25rem;
 }
 
+/* Form layout - changing to single column */
 .form-row {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   gap: 1.25rem;
 }
 
+/* Responsive Styles - update to maintain single column */
+@media (max-width: 768px) {
+  .desktop-nav {
+    display: none;
+  }
+
+  .mobile-menu-toggle {
+    display: flex;
+  }
+
+  .form-row {
+    flex-direction: column;
+  }
+
+  .form-group {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+
+  /* Other responsive styles remain unchanged */
+}
 label {
   display: block;
   margin-bottom: 0.5rem;
@@ -431,47 +519,95 @@ textarea:focus {
   background-color: rgba(230, 30, 30, 0.9);
 }
 
+/* Add these responsive styles at the end of your book.css file */
+
 /* Responsive Styles */
-@media (max-width: 992px) {
+@media (max-width: 1024px) {
   .booking-grid {
     grid-template-columns: 1fr;
+    gap: 40px;
   }
 
-  .faq-grid {
-    grid-template-columns: 1fr;
+  .booking-form {
+    order: 1;
+  }
+
+  .booking-info {
+    order: 2;
   }
 }
 
 @media (max-width: 768px) {
-  .page-title-section {
-    padding: 7rem 0 2rem;
+  .desktop-nav {
+    display: none;
   }
 
-  .page-title-section h1 {
-    font-size: 2rem;
+  .mobile-menu-toggle {
+    display: flex;
   }
 
   .form-row {
-    grid-template-columns: 1fr;
-    gap: 0;
+    flex-direction: column;
   }
 
-  .booking-info,
-  .booking-form-container {
-    padding: 1.5rem;
+  .form-group {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+  }
+
+  .modal-content {
+    width: 90%;
+    padding: 20px;
   }
 }
 
 @media (max-width: 576px) {
   .page-title-section h1 {
-    font-size: 1.75rem;
+    font-size: 28px;
   }
 
-  .booking-info h2 {
-    font-size: 1.5rem;
+  .booking-section h2 {
+    font-size: 24px;
   }
 
   .faq-question h3 {
-    font-size: 1rem;
+    font-size: 16px;
   }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-bottom-links {
+    margin-top: 15px;
+  }
+}
+
+/* Admin button styling - centered */
+.admin-button {
+  background-color: #333;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  font-family: "Montserrat", sans-serif;
+  transition: background-color 0.3s ease;
+  display: block;
+  margin: 15px auto 0;
+}
+
+.admin-button:hover {
+  background-color: #e61e1e;
 }

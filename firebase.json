@@ -1,0 +1,10 @@
+{
+  "hosting": {
+    "public": "C:\\Users\\hp\\OneDrive\\Desktop\\A-Z\\A-Z-",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}

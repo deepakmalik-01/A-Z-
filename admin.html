@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Panel - A TO Z Car Service</title>
+    <link rel="stylesheet" href="admin.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+  </head>
+  <body>
+    <div class="admin-container">
+      <header class="admin-header">
+        <div class="logo-wrapper">
+          <a href="index.html" class="logo">
+            <div class="logo-text">
+              <span class="logo-primary">A TO Z </span>Car Service
+            </div>
+          </a>
+        </div>
+        <h1>Admin Dashboard</h1>
+        <div class="admin-actions">
+          <button id="logoutBtn" class="logout-btn">Logout</button>
+        </div>
+      </header>
+
+      <div class="admin-content">
+        <main class="admin-main full-width">
+          <div id="loginSection" class="login-section">
+            <h2>Admin Login</h2>
+            <form id="loginForm">
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" required />
+              </div>
+              <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" required />
+              </div>
+              <button type="submit" class="login-btn">Login</button>
+              <p id="loginError" class="error-message"></p>
+            </form>
+          </div>
+
+          <div id="appointmentsSection" class="appointments-section hidden">
+            <div class="section-header">
+              <div class="header-left">
+                <h2>Appointment Management</h2>
+                <p class="admin-greeting">Hello Mr. Firasat</p>
+              </div>
+              <div class="filter-controls">
+                <select id="statusFilter">
+                  <option value="all">All Appointments</option>
+                  <option value="pending">Pending</option>
+                  <option value="confirmed">Confirmed</option>
+                  <option value="completed">Completed</option>
+                  <option value="cancelled">Cancelled</option>
+                  <option value="fake">Fake/Duplicate</option>
+                </select>
+                <input
+                  type="date"
+                  id="dateFilter"
+                  placeholder="Filter by date"
+                />
+                <button id="clearFilters" class="clear-btn">
+                  Clear Filters
+                </button>
+              </div>
+            </div>
+
+            <div class="appointments-table-container">
+              <table class="appointments-table">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Contact</th>
+                    <th>Vehicle</th>
+                    <th>Service</th>
+                    <th>Date & Time</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="appointmentsTableBody">
+                  <!-- Appointment data will be loaded here -->
+                </tbody>
+              </table>
+              <div id="noAppointments" class="no-data hidden">
+                <p>No appointments found.</p>
+              </div>
+              <div id="loadingIndicator" class="loading">
+                <div class="spinner"></div>
+                <p>Loading appointments...</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Appointment Details Modal -->
+          <div id="appointmentModal" class="modal">
+            <div class="modal-content">
+              <span class="close-modal">&times;</span>
+              <h2>Appointment Details</h2>
+              <div id="appointmentDetails">
+                <!-- Appointment details will be loaded here -->
+              </div>
+              <div class="modal-actions">
+                <button id="confirmAppointment" class="action-btn confirm">
+                  Confirm
+                </button>
+                <button id="completeAppointment" class="action-btn complete">
+                  Mark as Completed
+                </button>
+                <button id="cancelAppointment" class="action-btn cancel">
+                  Cancel Appointment
+                </button>
+                <button id="fakeAppointment" class="action-btn fake">
+                  Mark as Fake/Duplicate
+                </button>
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+
+    <script src="admin.js"></script>
+  </body>
+</html>

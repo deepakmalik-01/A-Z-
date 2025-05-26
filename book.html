@@ -15,14 +15,6 @@
     />
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
-*   Initialize Firebase in your `book.js` file using the configuration snippet you copied earlier.
-
-*   Modify the `appointmentForm` submit handler in `book.js`. Instead of just showing the confirmation modal and resetting the form, you'll need to:
-    *   Get the form data.
-    *   Get a reference to your Firestore database.
-    *   Add a new document to a Firestore collection (e.g., "appointments") with the form data.
-    *   Handle the success or failure of the data upload.
-
   </head>
   <body>
     <div class="mainbody">
@@ -40,7 +32,7 @@
 
             <nav class="desktop-nav">
               <a href="index.html" class="nav-link">Home</a>
-              <a href="#" class="nav-link">About</a>
+              <a href="about.html" class="nav-link">About</a>
               <a href="#" class="nav-link">Services</a>
               <a href="#" class="nav-link">FAQs</a>
               <a href="#" class="nav-link">Select</a>
@@ -61,7 +53,7 @@
         <div class="mobile-menu" id="mobileMenu">
           <nav class="mobile-nav">
             <a href="index.html" class="mobile-nav-link">Home</a>
-            <a href="#" class="mobile-nav-link">About</a>
+            <a href="about.html" class="mobile-nav-link">About</a>
             <a href="#" class="mobile-nav-link">Services</a>
             <a href="#" class="mobile-nav-link">FAQs</a>
             <a href="#" class="mobile-nav-link">Select</a>
@@ -248,20 +240,6 @@
                   ></textarea>
                 </div>
 
-                <div class="form-group checkbox-group">
-                  <label class="checkbox-container">
-                    <input
-                      type="checkbox"
-                      id="agreement"
-                      name="agreement"
-                      required
-                    />
-                    <span class="checkmark"></span>
-                    I agree to the <a href="#">terms and conditions</a> *
-                  </label>
-                  <div class="error-message" id="agreementError"></div>
-                </div>
-
                 <button type="submit" class="submit-btn">
                   SCHEDULE APPOINTMENT
                 </button>
@@ -380,19 +358,14 @@
                 Professional auto repair and maintenance services with a
                 commitment to quality and customer satisfaction.
               </p>
-              <div class="social-links">
-                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-linkedin-in"></i></a>
-              </div>
+              <!-- Social links removed -->
             </div>
 
             <div class="footer-links">
               <h3>Quick Links</h3>
               <ul>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="#">About Us</a></li>
+                <li><a href="about.html">About Us</a></li>
                 <li><a href="#">Services</a></li>
                 <li><a href="#">FAQs</a></li>
                 <li><a href="#">Contact</a></li>
@@ -435,18 +408,20 @@
               </ul>
             </div>
           </div>
-
-          <div class="footer-bottom">
-            <p>© 2025 A TO Z Car Service. All rights reserved.</p>
-            <div class="footer-bottom-links">
-              <a href="#">Privacy Policy</a>
-              <a href="#">Terms of Service</a>
-              <a href="#">Cookie Policy</a>
-            </div>
-          </div>
         </div>
       </footer>
-
+      <!-- Add this to your book.html file -->
+      <div id="successPopup" class="success-popup">
+        <div class="success-popup-content">
+          <span class="success-close">&times;</span>
+          <div class="success-icon">
+            <i class="fas fa-check-circle"></i>
+          </div>
+          <h3>Appointment Scheduled!</h3>
+          <p>Our team will reach out to you shortly.</p>
+          <button class="success-btn">OK</button>
+        </div>
+      </div>
       <!-- Confirmation Modal -->
       <div class="modal" id="confirmationModal">
         <div class="modal-content">

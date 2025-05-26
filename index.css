@@ -156,7 +156,7 @@ a {
   font-family: "Montserrat", sans-serif;
   font-weight: 500;
   color: #1a1a1a;
-  padding: 0.5rem 0;
+  padding: 0.4rem 0;
 }
 
 .mobile-nav-link:hover {
@@ -166,7 +166,7 @@ a {
 .appointment-btn.mobile {
   display: inline-block;
   text-align: center;
-  margin-top: 0.5rem;
+  margin-top: 0.4rem;
   margin-left: 0;
 }
 
@@ -636,7 +636,7 @@ a {
 .footer-bottom-links {
   display: flex;
   flex-wrap: wrap;
-  gap: 1.5rem;
+  gap: 0.69rem;
 }
 
 .footer-bottom-links a {
@@ -648,7 +648,19 @@ a {
   color: white;
 }
 
+/* Add these responsive styles at the end of your index.css file */
+
 /* Responsive Styles */
+@media (max-width: 1024px) {
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .testimonial-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 @media (max-width: 768px) {
   .desktop-nav {
     display: none;
@@ -659,17 +671,56 @@ a {
   }
 
   .hero-content h1 {
-    font-size: 2rem;
+    font-size: 36px;
   }
 
-  .desktop-break {
-    display: none;
+  .hero-content p {
+    font-size: 16px;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-content h1 {
+    font-size: 28px;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .testimonial-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .section-header h2 {
+    font-size: 26px;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
   }
 
   .footer-bottom {
     flex-direction: column;
-    align-items: center;
     text-align: center;
+  }
+
+  .footer-bottom-links {
+    margin-top: 15px;
   }
 }
 
@@ -683,7 +734,9 @@ a {
   .hero-content h1 {
     font-size: 1.75rem;
   }
-
+  .desktop-break {
+    display: none;
+  }
   .hero-content p {
     font-size: 1rem;
   }
